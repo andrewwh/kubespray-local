@@ -1,5 +1,5 @@
 # Kubespray with Vagrant
-Kubespray with vagrant but not using the ansible local Vagrant file. Why not just use the vagrant that comes with Kubespray? I wanted to fully configure the kubespray and run as if it were remote hosts.
+[Kubespray](https://kubespray.io) with vagrant but not using the ansible local Vagrant file. Why not just use the vagrant that comes with Kubespray? I wanted to fully configure the kubespray and run as if it were remote hosts.
 
 ## Contents
 - [Prerequisites](#pre-requisites)
@@ -30,6 +30,11 @@ _Run ansible against hosts:_
 ```
 ansible-playbook -i ../inventory/local/hosts.ini --become --become-user=root cluster.yml
 ```
+
+## Copy Cluster Configuration
+Kubespray is configured with ``kubectl_localhost: true``, so the admin.conf is available in inventory/local/artifacts/
+
+Copy this file to ~/.kube/config (on local machine, for current user)
 
 ## Kube Admin
 

@@ -1,5 +1,5 @@
 # Docker Registry
-Host a private docker registry in the cluster
+Host a private docker registry in the cluster. This is a hosted on the master (k8s-1) with local-storage persistence.
 
 ## Create Registry and Proxy
 
@@ -23,7 +23,14 @@ kubectl port-forward --namespace kube-system $POD 5000:5000
 ```
 
 ## Docker tag
-Tag your local image and push to the cluster. Use a image name as follows:
+Tag your local image and push to the cluster. E.g.
+
 ```
-image: localhost:5000/user/container
+docker tag kong:latest localhost:5000/kong/api
+docker push localhost:5000/kong/api
+```
+
+THen use a image name as follows:
+```
+image: localhost:5000/kong/api
 ```
