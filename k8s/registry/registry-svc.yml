@@ -11,7 +11,6 @@ spec:
   selector:
     k8s-app: registry
   ports:
-  - name: registry
+  - protocol: TCP
     port: 5000
-    targetPort: registry
-    protocol: TCP
+    targetPort: 5000

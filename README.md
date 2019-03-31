@@ -1,6 +1,13 @@
 # Kubespray with Vagrant
 Kubespray with vagrant but not using the ansible local Vagrant file. Why not just use the vagrant that comes with Kubespray? I wanted to fully configure the kubespray and run as if it were remote hosts.
 
+## Contents
+- [Prerequisites](#pre-requisites)
+- [Provision](#provision)
+- [Kubernetes shortcuts](SHORTCUTS.md)
+- [Network troubleshoot](NETWORK.md)
+- [Setup a Local Docker Registry](REGISTRY.md)
+
 ## Pre-requisites
 * Install ansible on your local machine
 * Clone kubespray in the root of this directory
@@ -14,7 +21,7 @@ ssh root@172.17.8.101
 
 > TODO: Try to automate this
 
-## Run
+## Provision
 
 ### Stand up boxes
 Run ``vagrant up`` to provision three vagrant boxes
